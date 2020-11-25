@@ -16,7 +16,8 @@ public class _64_EjercicioTeams {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Scanner sc = new Scanner(System.in); 
+		@SuppressWarnings("resource")
+		Scanner entrada = new Scanner(System.in); 
         int a[];
         int b[];
         int c[];
@@ -29,13 +30,13 @@ public class _64_EjercicioTeams {
         System.out.println("Leyendo la tabla a"); 
         for (i=0;i<5;i++){ 
             System.out.print("número: "); 
-            a[i]=sc.nextInt(); 
+            a[i]=entrada.nextInt(); 
         }
         // leemos la tabla b 
         System.out.println("Leyendo la tabla b"); 
         for (i=0;i<5;i++){ 
             System.out.print("número: "); 
-            b[i]=sc.nextInt(); 
+            b[i]=entrada.nextInt(); 
         }
         j=0; 
         for (i=0;i<5;i++){ 
@@ -48,6 +49,8 @@ public class _64_EjercicioTeams {
         for (j=0;j<10;j++) { 
             System.out.print(c[j]+" "); 
             System.out.println(""); 
-        } 
+        }
+        
+        entrada.close();
 	}
 }

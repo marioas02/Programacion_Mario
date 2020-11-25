@@ -18,6 +18,7 @@ public static void main(String[] args) {
 	
 	int numero=0;
 	int suma=0;
+	@SuppressWarnings("unused")
 	int contadordenumeros=0;
 	Scanner entrada = new Scanner(System.in); 
 	

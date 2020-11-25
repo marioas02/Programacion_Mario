@@ -55,6 +55,7 @@ public class _74_EjercicioTeams {
 			}
 		}
 		
+		entrada.close();		
 	}
 
 }

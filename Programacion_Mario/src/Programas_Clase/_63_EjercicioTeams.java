@@ -40,5 +40,7 @@ public class _63_EjercicioTeams {
 		System.out.println("La media de los numeros es " + suma_de_numeros/10);
 		System.out.printf("Este es el numero menor: %d\n", menor);
 	    System.out.printf("Este es el numero mayor: %d\n", mayor);
+	    
+	    entrada.close();
 	}
 }
