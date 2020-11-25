@@ -51,7 +51,7 @@ public class Semanal_5 {
 		Arrays.sort(numero);
 		
 //REPETICION DE UN NUMERO
-		if(numero[0]==numero[1]||numero[0]==numero[2]||numero[0]==numero[3]||numero[1]==numero[0]||numero[1]==numero[2]||numero[1]==numero[3]||numero[2]==numero[0]||numero[2]==numero[1]||numero[2]==numero[3]||numero[3]==numero[0]||numero[3]==numero[1]||numero[3]==numero[2]) {
+		if(numero[0]==numero[1]||numero[0]==numero[2]||numero[0]==numero[3]||numero[1]==numero[2]||numero[1]==numero[3]||numero[2]==numero[3]) {
 			System.out.println("No hay escalera");
 		}
 		else {
