@@ -113,3 +113,10 @@ public class FINAL {
         }while(rows != 0 || cols != 0);
     } 
 }
+//System.out.printf("\n");
+//for(int i=0; i<numero.length; i++) {
+//	System.out.println(numero[i]);
+//}
+//for(int i=0; i<palos.length; i++) {
+//	System.out.println(palos[i]);
+//}
