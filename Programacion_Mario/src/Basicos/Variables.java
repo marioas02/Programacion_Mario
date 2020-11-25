@@ -22,9 +22,11 @@ public class Variables {
 
 		//Decimal
 		float decimal_corto = 9.39F;
+		@SuppressWarnings("unused")
 		double decimal_largo;
 		
 		//Caracteres (2 bytes de memria)
+		@SuppressWarnings("unused")
 		char letra;
 		
 		//Bit = 0 o 1
@@ -33,6 +35,7 @@ public class Variables {
 		byte b;
 		
 		//Cadenas de caracteres
+		@SuppressWarnings("unused")
 		String cadena = "Hola Clase";
 		
 		//Casting
@@ -53,6 +56,7 @@ public class Variables {
 		entero = entero/2;
 		//aqui entero vale 5
 		//Operaciones con resto
+		@SuppressWarnings("unused")
 		int resto = entero%2; // Resto aqui valdria 1
 		//HOLAAAAAAAAAAAA
 	}

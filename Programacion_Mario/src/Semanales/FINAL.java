@@ -16,7 +16,7 @@ public class FINAL {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Scanner sc = new Scanner(System.in);
+		Scanner entrada = new Scanner(System.in);
         
         int rows, cols, c, num1, num2, z, count;
         boolean check;
@@ -25,7 +25,7 @@ public class FINAL {
         
         do
         {
-            size = sc.nextLine().split(" ");
+            size = entrada.nextLine().split(" ");
             rows = Integer.parseInt(size[0]);
             cols = Integer.parseInt(size[1]);
             if (rows != 0 && cols != 0)
@@ -34,19 +34,19 @@ public class FINAL {
 
                 for (int i = 0; i < rows; i++)
                 {
-                    dat = sc.nextLine();
+                    dat = entrada.nextLine();
                     for (int j = 0; j < cols; j++)
                     {
                         table[i][j] = dat.charAt(j);
                     }
                 }
 
-                c = sc.nextInt();
-                sc.nextLine();
+                c = entrada.nextInt();
+                entrada.nextLine();
                 
                 for (int i = 0; i < c; i++) 
                 {
-                    b = sc.nextLine().split(" ");
+                    b = entrada.nextLine().split(" ");
                     
                     num1 = Integer.parseInt(b[0])-1;
                     num2 = Integer.parseInt(b[1])-1;
@@ -111,6 +111,8 @@ public class FINAL {
                 System.out.println("---");
             }
         }while(rows != 0 || cols != 0);
+        
+        entrada.close();
     } 
 }
 //System.out.printf("\n");
