@@ -95,12 +95,12 @@ public class Semanal_5 {
 						System.out.printf("Para hacer escalera te falta: %d %c", numero[2]-1,palos[0]);
 					}
 					
-	//DESORDEN EL ENTRE EL 2 Y EL 3		
+//DESORDEN EL ENTRE EL 2 Y EL 3		
 					else if(numero[0]==numero[1]-1&&numero[1]==numero[2]-1&&numero[2]==numero[3]-2) {
 						System.out.printf("Para hacer escalera te falta: %d %c", numero[3]-1,palos[0]);
 					}
 					
-	//DESORDEN EN LA ROTATIVA 1,13,12,11,10
+//DESORDEN EN LA ROTATIVA 1,13,12,11,10
 					else if(numero[0]==1&&numero[3]==12&&numero[1]==10&&numero[2]==11) {
 						System.out.printf("Para hacer escalera te falta: %d %c", numero[3]+1,palos[0]);
 					}
