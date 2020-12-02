@@ -17,7 +17,7 @@ public class prueba {
 		// TODO Auto-generated method stub
 		Scanner entrada = new Scanner(System.in);
 		// PREGUNTA PARA NAIRA: SALE DEL PROGRAMA AL FINZALIZAR UN VILLANO O HA DE
-		// CLICAR ALGO,
+		// CLICAR ALGO,A
 		// PREGUNTA PARA NAIRA: SON PREDETERMINADAS LAS FILAS Y COLUMNAS?
 
 		int numero[][] = new int[10][10];
