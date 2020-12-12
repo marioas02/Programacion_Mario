@@ -1,7 +1,7 @@
 /**
  * 
  */
-package Programas_Clase;
+package Proyecto_Final;
 
 import java.util.Scanner;
 
@@ -9,7 +9,7 @@ import java.util.Scanner;
  * @author Mario Aguirre y Carlos Calvo
  *
  */
-public class ProyectoFinalV2 {
+public class ProyectoFinal_MarioAguirre_CarlosCalvo {
 
 	/**
 	 * @param args
