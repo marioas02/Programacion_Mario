@@ -18,30 +18,87 @@ public class _80_EjercicioTeams {
 		// TODO Auto-generated method stub
 		Scanner Scanner = new Scanner(System.in);
 		
-		System.out.println("Escribe un numero entero");
+		System.out.println("Escribe un numero entero: ");
 		int n1 = Scanner.nextInt();
-		System.out.println("Escribe un numero entero");
+		System.out.println("Escribe otro numero entero: ");
 		int n2 = Scanner.nextInt();
-		System.out.println("Escribe un numero entero");
-		int n3 = Scanner.nextInt();
 		
-		int max=maximo(n1,n2,n3);
-		System.out.println("El maximo es: " +max);
+		int maxi = maximo(n1,n2); 
+		
+		System.out.println("El maximo es " + maxi);
+		
+		System.out.println("El maximo entre 56 y 78 es " + maximo(56,78));
+		
+		System.out.println("El maximo entre 4,5,6 es " + maximo1(4,5,6));
+		System.out.println("El maximo entre 8,5,1 es " + maximo1(8,5,1));
+		System.out.println("El maximo entre 4,9,3 es " + maximo1(4,9,3));
+		System.out.println("El maximo entre 3,9,4 es " + maximo1(3,9,4));
+		System.out.println("El maximo entre 5,4,6 es " + maximo1(5,4,6));
+		System.out.println("El maximo entre 8,1,5 es " + maximo1(8,1,5));
+		
+		int[] prueba = new int[10];
+		fillrandom(prueba);
+		pintaArray1(prueba);
+		System.out.println("El maximo del array es " + maximo2(prueba));
 		
 		Scanner.close();
 	}
 	
-	private static int maximo(int numero1, int numero2, int numero3) {
-		int maximo = 0;
-
-		if (numero1 > numero2 && numero2 > numero3)
-			maximo = numero1;
-		if (numero2 > numero1 && numero1 > numero3)
-			maximo = numero2;
-		if (numero3 > numero1 && numero3 > numero2)
-			maximo = numero3;
-
-		return maximo;
+	//Funcion que devuelve el maximo numero entero de dos numeros que se le pasen
+	private static int maximo(int num1, int num2) {
+		int max = num1;
+		
+		if (num1 >= num2)
+			max = num1;
+		else
+			max = num2;
+		
+		return max;
 	}
 	
+
+	//Funcion que devuelve el maximo numero entero de tres numeros que se le pasen
+	private static int maximo1(int num1, int num2, int num3) {
+		int max = num1;
+		
+		
+		
+		return max;
+	}
+	
+	//Funcion que devuelve el maximo numero entero de un array de numeros que se le pasen
+	private static int maximo2(int[] numeros) {
+		@SuppressWarnings("unused")
+		int max = numeros[0];
+			int mayor;
+			mayor=numeros[0];
+			for(int i=0; i<numeros.length; i++) { 
+
+				if(numeros[i]>mayor) { 
+
+					mayor=numeros[i]; 
+
+				} 
+
+			} 
+
+			return mayor; 
+
+		}
+	
+	//funcion que rellene array con numeros aleatorios, le paso el array
+	private static void fillrandom(int[] array) {
+        for(int i=0;i<array.length;i++) { 
+            array[i]=(int)(Math.random()*100)+1;  
+        } 
+	}
+	
+	//Funcion que me pinta un array unidimensional
+	private static void pintaArray1(int[] array) {
+		for(int i=0;i<array.length;i++) { 
+            System.out.print(array[i]+" "); 
+        } 
+		System.out.print("\n"); 
+	}
+
 }

@@ -25,6 +25,7 @@ public class _54_Ejercicio {
 		for (int i=0; i<cadena.length();i++) {
 			
 		}
+		
+		Scanner.close();
 	}
-
 }
