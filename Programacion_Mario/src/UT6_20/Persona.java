@@ -4,7 +4,8 @@
 package UT6_20;
 
 /**
- * @author magui Clase persona con nombre,
+ * @author Mario 
+ * Clase de PERSONA.
  */
 public class Persona {
 	//Atributos de la clase privados, no accesibles desde fuera de la clase
@@ -65,6 +66,7 @@ public class Persona {
 		this.nombre = nombre;
 	}
 	public void setApellidos(String apellidos) {
+		//Convierto la primera letra de cada apellido en mayuscula si es que hay
 		apellidos = convertirNombresPropios(apellidos);
 		
 		//Si es menor que 4, uso sin especificar
@@ -74,24 +76,31 @@ public class Persona {
 		this.apellidos = apellidos;
 	}
 	public void setAnio(int anio) {
+		//Verifico que no sea menor que 1900 o mayor que 2020
 		if(anio<1900 || anio>2020)
 			anio = 2000;
 		
 		this.anioNacimiento = anio;
 	}
 	public void setMes(int mes) {
+		//Verifico que no sea menor que 1 o mayor que 12
 		if(mes<1 || mes>12)
 			mes = 1;
 		
 		this.mesNacimiento = mes;
 	}
 	public void setDia(int dia) {
+		//Verifico que no sea menor que 1 o mayor que 31
 		if(dia<1 || dia>31)
 			dia = 1;
 		
 		this.diaNacimiento = dia;
 	}
 	public void setSexo(char sexo) {
+		//Verifico que no sea otro caracter entre H o M
+		if (sexo != 'H' || sexo != 'M')
+			sexo = 'X';
+		
 		this.sexo = sexo;
 	}
 	
