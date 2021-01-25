@@ -4,7 +4,7 @@ public class Contador {
 	// Atributos
 	private int cont = 0;
 
-	// Constricutor vacio
+	// Construcutor vacio
 	public Contador() {
 
 	}
