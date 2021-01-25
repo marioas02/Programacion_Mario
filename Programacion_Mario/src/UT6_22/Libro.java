@@ -2,17 +2,17 @@ package UT6_22;
 
 public class Libro {
 
-	//Atributos
+	// Atributos
 	private String titulo;
 	private String autor;
 	private int ejemplares;
 	private int prestados;
-	
+
 	// Construcutor vacior
-	public Libro(){
-		
+	public Libro() {
+
 	}
-	
+
 	// Constructores
 	public Libro(String titulo, String autor, int ejemplares, int prestados) {
 		setTitulo(titulo);
@@ -20,42 +20,63 @@ public class Libro {
 		setEjemplares(ejemplares);
 		setPrestados(prestados);
 	}
+
 	// Getters
 	public String getTitulo() {
-		return this.titulo;
+		return titulo;
 	}
+
 	public String getAutor() {
-		return this.autor;
+		return autor;
 	}
+
 	public int getEjemplares() {
-		return this.ejemplares;
+		return ejemplares;
 	}
+
 	public int getPrestados() {
-		return this.prestados;
-	}
-	
-	// Setters
-	public void setTitulo(String titulo) {
-		
-	}
-	public void setAutor(String autor) {
-		
-	}
-	public void setEjemplares(int ejemplares) {
-	
-	}
-	public void setPrestados(int prestados) {
-		
-	}
-	
-	// Métodos y funciones
-	public int prestamo() {
-		if(prestados<ejemplares)
-			
 		return prestados;
 	}
-	public int devolucion() {
-		
+
+	// Setters
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
 	}
-	
+
+	public void setAutor(String autor) {
+		this.autor = autor;
+	}
+
+	public void setEjemplares(int ejemplares) {
+		this.ejemplares = ejemplares;
+	}
+
+	public void setPrestados(int prestados) {
+		this.prestados = prestados;
+	}
+
+	// Métodos y funciones
+	public boolean prestamo() {
+		boolean p = false;
+		if (prestados < ejemplares) {
+			p = true;
+			prestados++;
+		} else {
+			p = false;
+		}
+		return p;
+	}
+
+	public boolean devolucion() {
+		boolean p = false;
+		if (prestados > 0) {
+			p = true;
+			prestados--;
+		} else {
+			p = false;
+		}
+
+		return p;
+	}
+
 }
