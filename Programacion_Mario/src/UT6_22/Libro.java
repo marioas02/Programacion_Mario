@@ -2,18 +2,28 @@ package UT6_22;
 
 public class Libro {
 
-	// Atributos
+	/**
+	 * Atributos de nuestra clase privada.
+	 */
 	private String titulo;
 	private String autor;
 	private int ejemplares;
 	private int prestados;
 
-	// Construcutor vacior
+	/**
+	 * Constructor vacio
+	 */
 	public Libro() {
 
 	}
 
-	// Constructores
+	/**
+	 * Constructor
+	 * @param titulo Nombre del libro.
+	 * @param autor Autor del libro.
+	 * @param ejemplares Cuantos libros hay.
+	 * @param prestados Cuantos libros hay prestados.
+	 */
 	public Libro(String titulo, String autor, int ejemplares, int prestados) {
 		setTitulo(titulo);
 		setAutor(autor);
@@ -21,62 +31,127 @@ public class Libro {
 		setPrestados(prestados);
 	}
 
-	// Getters
+	/**
+	 * Getter de titulo
+	 * @return
+	 */
 	public String getTitulo() {
 		return titulo;
 	}
-
+	/**
+	 * Getter del Autor
+	 * @return
+	 */
 	public String getAutor() {
 		return autor;
 	}
-
+	/**
+	 * Getter de Ejemplares
+	 * @return
+	 */
 	public int getEjemplares() {
 		return ejemplares;
 	}
-
+	/**
+	 * Getter de Prestados
+	 * @return
+	 */
 	public int getPrestados() {
 		return prestados;
 	}
 
-	// Setters
+	/**
+	 * Setter de titulo
+	 * @param titulo
+	 */
 	public void setTitulo(String titulo) {
 		this.titulo = titulo;
 	}
-
+	/**
+	 * Setter del Autor
+	 * @param autor
+	 */
 	public void setAutor(String autor) {
 		this.autor = autor;
 	}
-
+	/**
+	 * Setter de Ejemplares
+	 * @param ejemplares
+	 */
 	public void setEjemplares(int ejemplares) {
 		this.ejemplares = ejemplares;
 	}
-
+	/**
+	 * Setter de Prestados
+	 * @param prestados
+	 */
 	public void setPrestados(int prestados) {
 		this.prestados = prestados;
 	}
 
-	// Métodos y funciones
+	/**
+	 * Metodo prestamo el cual calcula si se puede hacer un
+	 * prestamo o si no.
+	 */
 	public boolean prestamo() {
-		boolean p = false;
+		boolean prestado = false;
 		if (prestados < ejemplares) {
-			p = true;
+			prestado = true;
 			prestados++;
 		} else {
-			p = false;
+			prestado = false;
 		}
-		return p;
+		return prestado;
 	}
-
+	
+	/**
+	 * Metodo devolucion el cual calcula si hay algun prestamo
+	 * y lo devuelve si es que se puede.
+	 */
 	public boolean devolucion() {
-		boolean p = false;
+		boolean devuelto = false;
 		if (prestados > 0) {
-			p = true;
+			devuelto = true;
 			prestados--;
 		} else {
-			p = false;
+			devuelto = false;
 		}
 
-		return p;
+		return devuelto;
+	}
+	
+	/**
+	 * Metodo toString para pintar en pantalla lo que el usuario
+	 * introduce, el titulo, el autor, los prestados y el numero
+	 * de ejemplares.
+	 */
+	@Override
+	public String toString() {
+		return "Titulo: " + this.titulo + "\nAutor: " + this.autor + "\nEjemplares: " + this.ejemplares
+				+ "\nPrestados: " + this.prestados;
 	}
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
