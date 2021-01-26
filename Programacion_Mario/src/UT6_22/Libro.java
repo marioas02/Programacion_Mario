@@ -9,7 +9,8 @@ public class Libro {
 	private String autor;
 	private int ejemplares;
 	private int prestados;
-
+	private int num;
+	
 	/**
 	 * Constructor vacio
 	 */
@@ -59,7 +60,6 @@ public class Libro {
 	public int getPrestados() {
 		return prestados;
 	}
-
 	/**
 	 * Setter de titulo
 	 * @param titulo
@@ -120,6 +120,11 @@ public class Libro {
 		return devuelto;
 	}
 	
+	public int numejemplares() {
+		num = this.ejemplares - this.prestados;
+		return num;
+		
+	}
 	/**
 	 * Metodo toString para pintar en pantalla lo que el usuario
 	 * introduce, el titulo, el autor, los prestados y el numero
