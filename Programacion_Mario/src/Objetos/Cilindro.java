@@ -1,4 +1,4 @@
-package Objetos.Ejemplos;
+package Objetos;
 
 public class Cilindro {
 	// ATRIBUTOS O PROPIEDADES

@@ -1,7 +1,7 @@
 /**
  * 
  */
-package Objetos.Ejemplos;
+package Objetos;
 
 /**
  * @author magui
