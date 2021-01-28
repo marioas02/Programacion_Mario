@@ -1,7 +1,7 @@
 /**
  * 
  */
-package Objetos;
+package Objetos.Ejemplos;
 
 import java.util.Scanner;
 
