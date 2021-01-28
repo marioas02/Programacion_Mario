@@ -1,4 +1,4 @@
-package PruebaNivel;
+package Objetos.PruebaNivel;
 
 public class Taquillas {
 	int numero;

@@ -1,4 +1,4 @@
-package UT6_22;
+package Objetos.UT6.UT6_22;
 
 public class Libro {
 

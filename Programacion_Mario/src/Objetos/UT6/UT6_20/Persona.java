@@ -1,7 +1,7 @@
 /**
  * 
  */
-package UT6_20;
+package Objetos.UT6.UT6_20;
 
 /**
  * @author Mario 

@@ -1,7 +1,7 @@
 /**
  * 
  */
-package PruebaNivel;
+package Objetos.PruebaNivel;
 
 import java.util.Scanner;
 

@@ -1,7 +1,7 @@
 /**
  * 
  */
-package UT6_21;
+package Objetos.UT6.UT6_21;
 
 import java.util.ArrayList;
 
