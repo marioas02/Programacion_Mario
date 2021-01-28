@@ -1,7 +1,7 @@
 /**
  * 
  */
-package Objetos.UT6.UT6_22;
+package Objetos.UT6.UT6_22y23;
 
 import java.util.Scanner;
 
