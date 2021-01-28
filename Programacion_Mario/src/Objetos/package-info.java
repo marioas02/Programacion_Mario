@@ -2,7 +2,7 @@
  * 
  */
 /**
- * @author MarioAguirre
+ * @author MarioAguirre.
  *
  */
 package Objetos;
