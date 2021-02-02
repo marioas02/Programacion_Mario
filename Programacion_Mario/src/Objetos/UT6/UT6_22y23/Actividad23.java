@@ -86,27 +86,32 @@ public class Actividad23 {
 				System.out.println("Has escogido la opcion 4");
 				System.out.println("Introduce el titulo del libro que quiere hacer un prestamo: ");
 				titulo = ScannerString.nextLine();
-//				for(int i=0; i<libros.size(); i++) {
-//					if(libros.get(i).getTitulo().equals(titulo)) {
-//						libros.get(i).setPrestados(prestados);
-//						System.out.println("Libro prestado.");
-//					}else {
-//						System.out.println("Libro no encontrado.");
-//					}
-//				}
+				for(int i=0; i<libros.size(); i++) {
+					if(libros.get(i).getTitulo().equals(titulo)) {
+						libros.get(i).prestamo();
+						System.out.println("Libro prestado.");
+					}else {
+						System.out.println("Libro no encontrado.");
+					}
+				}
 			}
 			if(opcion==5) {
 				System.out.println("Has escogido la opcion 5");
 				System.out.println("Introduce el titulo del libro que quieres devolver: ");
 				titulo = ScannerString.nextLine();
-//				for(int i=0; i<libros.size(); i++) {
-//					if(libros.get(i).getTitulo().equals(titulo)) {
-//						libros.get(i).setPrestados(prestados);
-//						System.out.println("Libro devuelto.");
-//					}else {
-//						System.out.println("Libro no encontrado.");
-//					}
-//				}
+				for(int i=0; i<libros.size(); i++) {
+					if(libros.get(i).getTitulo().equals(titulo)) {
+						libros.get(i).devolucion();
+						System.out.println("Libro devuelto.");
+					}else {
+						System.out.println("Libro no encontrado.");
+					}
+				}
+			}
+			System.out.println("Libros en la biblioteca: ");
+			for (Libro l: libros) {
+				System.out.println("");
+			    System.out.println(l);
 			}
 			System.out.println("");
 		}while(opcion!=0);
@@ -117,7 +122,7 @@ public class Actividad23 {
 	
 	private static int opciones(Scanner ScannerInt) {
 		int opcion = 0;
-		System.out.println("Pulsa:\n\t1: Alta Libro.\n\t2: Consultar Libro.\n\t3: Baja Libro.\n\t4: Prestamo Libro.\n\t0: Salir.");
+		System.out.println("Pulsa:\n\t1: Alta Libro.\n\t2: Consultar Libro.\n\t3: Baja Libro.\n\t4: Prestamo Libro.\n\t5: Devolucion Libro\n\t0: Salir.");
 		opcion = ScannerInt.nextInt();
 		return opcion;
 	}
