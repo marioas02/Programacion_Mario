@@ -15,9 +15,8 @@ public class Ejemplos {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		@SuppressWarnings("unused")
-		float valores[] = {1,1,1,2,2,3,3,4,5,6,7};
-//		System.out.print
+		float valores[] = {2,8,5,4,10,43};
+		System.out.println("La media es: "+Estadisticas.media(valores));
 		
 		int valor = 4;
 		System.out.println(valor+"! = "+Estadisticas.permutaciones(valor));

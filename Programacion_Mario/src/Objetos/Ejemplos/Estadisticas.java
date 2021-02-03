@@ -12,24 +12,26 @@ import java.util.Arrays;
 public class Estadisticas {
 	
 	public static float media(float[] valores) {
-		return 0;
-		//TODO
+//		float valores[] = new float[6];
+		int sum = 0;
+		float media;
+		int j=2;
+		for(int i=0;i<=valores.length;i++) {
+			sum=(int) (sum+valores[i]);
+			j++;
+		}
+		media=sum/j;
+		
+		return media;
+		
 	}
 	
 	public static float moda(float[] valores) {
-		@SuppressWarnings("unused")
-		int contador1 = 2;
-//		int contador2 = 2;
-//		int aux;
+		
 		Arrays.sort(valores);
 		for(int i=0;i<=valores.length;i++) {
-			if(valores[i]==valores[i+1]) {
-				contador1++;
-//				aux = contador1;
-			}			
-		}
 			
-		
+		}
 		return 0;
 		//TODO
 	}
