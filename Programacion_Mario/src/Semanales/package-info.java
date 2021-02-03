@@ -2,7 +2,7 @@
  * 
  */
 /**
- * @author magui
+ * @author MarioAguirre
  *
  */
 package Semanales;
