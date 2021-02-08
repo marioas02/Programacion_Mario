@@ -27,12 +27,22 @@ public class Estadisticas {
 	}
 	
 	public static float moda(float[] valores) {
-		
+		int contador = 0;
+		@SuppressWarnings("unused")
+		int aux = 0;
+		@SuppressWarnings("unused")
+		int posicion = 0;
 		Arrays.sort(valores);
 		for(int i=0;i<=valores.length;i++) {
-			
+			if(valores[i] == valores[i+1]) {
+				contador++;
+				posicion=i;
+			}else {
+				contador=0;
+			}
+				
 		}
-		return 0;
+		return valores[contador];
 		//TODO
 	}
 	
