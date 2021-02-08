@@ -36,7 +36,7 @@ public class Estadisticas {
 		//TODO
 	}
 	
-	private static long factorial(int valor) {
+	private static int factorial(int valor) {
 		if(valor == 1) {
 			return 1;
 		}else {
@@ -44,11 +44,12 @@ public class Estadisticas {
 		}
 	}
 	
-	public static long permutaciones(int permutacion) {
-		return factorial(permutacion);
+	public static int permutaciones(int n) {
+		return factorial(n);
 	}
-	public static long variacionSR(int n, int m) {
-		long resultado = 0;
+	
+	public static int variacionSR(int n, int m) {
+		int resultado = 0;
 		if(n<=m) {
 			resultado=(factorial(m))/factorial(m-n);
 		}
@@ -56,9 +57,9 @@ public class Estadisticas {
 				
 	}
 	
-	public static long variacionCR(int n1, int m1) {
-		long resultado = 0;
-		resultado=(long) Math.pow(m1, n1);
+	public static int variacionCR(int n1, int m1) {
+		int resultado = 0;
+		resultado=(int) Math.pow(m1, n1);
 		return resultado;
 		}
 }
