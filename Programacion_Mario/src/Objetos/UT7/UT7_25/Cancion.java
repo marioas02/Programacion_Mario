@@ -9,7 +9,7 @@ public class Cancion {
 
 	}
 
-	public Cancion(String titulo, String autor, int duracion) {
+	public Cancion(String titulo, String artista, int duracion) {
 		setTitulo(titulo);
 		setArtista(artista);
 		setDuracion(duracion);
