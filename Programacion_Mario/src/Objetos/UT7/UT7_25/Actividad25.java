@@ -25,9 +25,12 @@ public class Actividad25 {
 		int duracion;
 		int opcion;
 		int posicion;
-
+		
 		Playlist favoritos = new Playlist();
 
+		System.out.println("Llamas a tu nombre como: ");
+		
+		
 		do {
 			opcion = opciones(ScannerMenu);
 
@@ -58,17 +61,35 @@ public class Actividad25 {
 				break;
 
 			case 3:
-				System.out.println("En la Playlist favoritos hay: "
-						+ favoritos.obtieneTotalCanciones()
-						+ " Canciones");
+				System.out.println("En la Playlist favoritos hay: " + favoritos.obtieneTotalCanciones() + " Canciones");
 				break;
-				
+
 			case 4:
+				System.out.println("Canciones en la Playlist: ");
 				System.out.println(favoritos.mostrarPlaylist());
-			}
+				break;
+
+			case 5:
+				System.out.println("Duracion en la Playlist: ");
+				System.out.println(favoritos.totalDuracionPlaylist());
+				break;
 			
+			case 6:
+				System.out.println("Que se esta produciendo: ");
+				System.out.println(favoritos.reproducirPlaylist());
+				break;
 			
+			case 7:
+				System.out.println("Posicion para posicion: ");
+				posicion = ScannerInt.nextInt();
+				System.out.println(favoritos.reproducirCancion1(posicion)+" ");
+				break;
+			
+			case 8:
 				
+				break;
+			
+			}
 
 //			if (opcion == 0) {
 //				System.out.println("Has escogido la opcion 0");

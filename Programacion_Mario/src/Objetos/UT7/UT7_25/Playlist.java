@@ -15,12 +15,20 @@ public class Playlist {
 		canciones = new ArrayList<Cancion>();
 	}
 
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
 	public void anadirCancion(String titulo, String artista, int duracion) {
 		canciones.add(new Cancion(titulo, artista, duracion));
 	}
 
-	public String obtieneCancion(int posicion) {
-		return canciones.get(posicion).toString();
+	public Cancion obtieneCancion(int posicion) {
+		return canciones.get(posicion);
 	}
 
 	public int obtieneTotalCanciones() {
@@ -29,28 +37,73 @@ public class Playlist {
 		return contador;
 	}
 
-//	@SuppressWarnings("unused")
 	public StringBuilder mostrarPlaylist() {
-		
-		StringBuilder cancion1 = null;
-		
-		StringBuilder cancion = null;
+		StringBuilder cancion = new StringBuilder("");
 		for (int i = 0; i < canciones.size(); i++) {
-			cancion = cancion1.append(canciones.get(i).toString());
+			cancion.append(canciones.get(i).toString());
+			cancion.append("\n");
 		}
 		return cancion;
-//		for (int i = 0; i < canciones.size(); i++) {
-//			cancion = canciones.get(i).toString();
-//		}
-//		return cancion;
-		
 	}
 
-//	public int totalDuracionPlaylist() {
-//		int total = 0;
-//		for(Cancion cancion: canciones) {
-//			total += cancion.duracion;
+	public int totalDuracionPlaylist() {
+		int total = 0;
+		for(Cancion c: canciones) {
+			total+=c.getDuracion();
+		}
+		return total;
+	}
+	
+	public StringBuilder reproducirPlaylist() {
+		StringBuilder cancion = new StringBuilder("");
+		if(canciones.size()>0) {
+			for(int i = 0; i < canciones.size(); i++) {
+				cancion.append(canciones.get(i).reproducir());
+				cancion.append("\n");
+			}
+		}else {
+			cancion.append("La playlist no tiene canciones");
+		}
+		return cancion;
+	}
+	
+	public void reproducirCancion(int posicion) {
+		canciones.get(posicion).reproducir();
+	}
+	
+	public String reproducirCancion1(int posicion) {
+		return canciones.get(posicion).reproducir();
+	}
+
+	public boolean eliminarCancion(int posicion) {
+		if(canciones.size()>0) {
+			if(posicion<=canciones.size()) {
+				canciones.remove(posicion);
+				return true;
+			}else {
+				return false;
+			}		
+		}else {
+			return false;
+		}
+	}
+	
+	public Cancion encontrarCancionPorTitulo(String nombre) {
+		
+		return null;
+		
+	}
+	
+//	for(int i=0; i<libros.size(); i++) {
+//		if(libros.get(i).getTitulo().equals(titulo)) {
+//			libros.remove(i).getTitulo().equals(titulo);
+//			System.out.println("Borrado.");
+//		}else {
+//			System.out.println("Libro no encontrado.");
 //		}
-//		return total;
 //	}
+	
+	
+	
+	
 }

@@ -43,4 +43,8 @@ public class Cancion {
 	public String toString() {
 		return this.titulo + " - " + this.artista + " (" + this.duracion + " minutos)";
 	}
+	
+	public String reproducir() {
+		return "Reproduciendo..." + this.titulo;
+	}
 }
