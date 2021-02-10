@@ -101,14 +101,14 @@ public class Actividad25 {
 				break;
 			
 			case 10:
-				System.out.printf("Titulo de la cancion: ");
+				System.out.printf("Título de la canción: ");
 				titulo = ScannerString.nextLine();
 				System.out.println("Los datos de la canción son: ");
 				System.out.println(favoritos.encontrarCancionPorTitulo(titulo));
 				break;
 			
 			case 11:
-				System.out.printf("Artista de la cancion: ");
+				System.out.printf("Artista de la canción: ");
 				artista = ScannerString.nextLine();
 				System.out.println(artista+" ha compuesto estas canciones: ");
 				System.out.println(favoritos.encontrarCancionesPorArtista(artista));
