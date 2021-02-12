@@ -3,8 +3,6 @@
  */
 package Objetos.Ejemplos;
 
-import java.util.Arrays;
-
 /**
  * @author MarioAguirre
  *
@@ -12,40 +10,36 @@ import java.util.Arrays;
 public class Estadisticas {
 	
 	public static float media(float[] valores) {
-//		float valores[] = new float[6];
-		int sum = 0;
-		float media;
-		int j=2;
-		for(int i=0;i<=valores.length;i++) {
-			sum=(int) (sum+valores[i]);
-			j++;
+		float media = 0;
+		for (float i: valores) {
+			media = media+i;
 		}
-		media=sum/j;
-		
+		if(valores.length>0) {
+			media = media/valores.length;
+		}
 		return media;
 		
 	}
 	
 	public static float moda(float[] valores) {
-		int contador = 0;
-		@SuppressWarnings("unused")
-		int aux = 0;
-		@SuppressWarnings("unused")
-		int posicion = 0;
-		Arrays.sort(valores);
-		for(int i=0;i<=valores.length;i++) {
-			if(valores[i] == valores[i+1]) {
-				contador++;
-				posicion=i;
-			}else {
-				contador=0;
+		int maxrepes = 0;
+		float moda = 0;
+
+		for (int i = 0; i < valores.length; i++) {
+			int repeticiones = 0;
+			for (int j = 0; j < valores.length; j++) {
+				if (valores[i] == valores[j]) {
+					repeticiones++;
+				}
+				if (repeticiones > maxrepes) {
+					moda = valores[i];
+					maxrepes = repeticiones;
+				}
 			}
-				
 		}
-		return valores[contador];
-		//TODO
+		return moda;
 	}
-	
+		
 	private static int factorial(int valor) {
 		if(valor == 1) {
 			return 1;
