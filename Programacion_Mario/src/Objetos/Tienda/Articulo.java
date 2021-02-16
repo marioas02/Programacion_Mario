@@ -72,4 +72,37 @@ public class Articulo {
 	public boolean disponible(int cantidad) {
 		return cantidad < stock;
 	}
+	
+	
+	@Override
+	public boolean equals(Object o) {
+		if (o == null) {
+			return false;
+		}
+		if (this.getClass() != o.getClass()) {
+			return false;
+		} else {
+			Articulo a = (Articulo) o;
+			if (this.codigo.equals(a.getCodigo())) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
