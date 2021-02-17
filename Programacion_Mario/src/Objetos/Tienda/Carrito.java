@@ -38,5 +38,21 @@ public class Carrito {
 		}
 		this.total = calculaTotal();
 	}
+	
+	public String mostrarCarrito() {
+		StringBuilder sb = new StringBuilder();
+		sb.append("**********CARRITO**********");
+		for (ArticuloCarrito ac : pedido) {
+			sb.append(ac);
+		}
+		sb.append("Total: ").append(this.total);
+		if (confirmado) {
+			sb.append("\nEstado confirmado\n");
+		} else {
+			sb.append("\nEstado pendiente\n");
+		}
+		sb.append("**********CARRITO**********");
+		return sb.toString();
+	}
 
 }

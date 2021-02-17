@@ -25,6 +25,7 @@ public class Tienda {
 		
 		ArrayList<Articulo> catalogo = new ArrayList<Articulo>();
 		inicializarCatalogo(catalogo);
+		Carrito cesta = new Carrito();
 		
 		
 		do {
@@ -38,11 +39,12 @@ public class Tienda {
 				break;
 			
 			case 1:
-				addArticuloCatalogo(catalogo, ScannerInt, ScannerString);
+				addArticuloCatalogo(catalogo, ScannerString, ScannerInt);
 				mostrarCatalogo(catalogo);
 				break;
 			
 			case 2:
+				comprar(catalogo, cesta, ScannerString, ScannerInt);
 				break;
 				
 			case 3:
@@ -80,15 +82,15 @@ public class Tienda {
 		c.add(new Articulo("0004", "Ratón", 20.00F, 15));
 	}
 	
-	private static void addArticuloCatalogo(ArrayList<Articulo> c, Scanner sc, Scanner sn) {
+	private static void addArticuloCatalogo(ArrayList<Articulo> c, Scanner ScannerString, Scanner ScannerInt) {
 		System.out.println("Introduce el código del nuevo Artículo: ");
-		String codigo = sc.nextLine();
+		String codigo = ScannerString.nextLine();
 		System.out.println("Introduce el nombre del nuevo Artículo: ");
-		String nombre = sc.nextLine();
+		String nombre = ScannerString.nextLine();
 		System.out.println("Introduce el precio del nuevo Artículo: ");
-		float precio = sn.nextFloat();
+		float precio = ScannerInt.nextFloat();
 		System.out.println("Introduce el stock del nuevo Artículo: ");
-		int stock = sn.nextInt();
+		int stock = ScannerInt.nextInt();
 
 		c.add(new Articulo(codigo, nombre, precio, stock));
 	}
@@ -99,8 +101,24 @@ public class Tienda {
 		}
 	}
 	
-	@SuppressWarnings("unused")
-	private static void comprar(ArrayList<Articulo> c) {
+	private static Articulo buscarArticuloPorCodigo(ArrayList<Articulo> c, String codigo) {
+		int talla = c.size();
+		int i = 0;
+		Articulo a = null;
+		boolean found = false;
+
+		while (i < talla || found) {
+			if (c.get(i).getCodigo().equals(codigo)) {
+				a = c.get(i);
+				found = true;
+			} else {
+				i++;
+			}
+		}
+		return a;
+	}
+	
+	private static void comprar(ArrayList<Articulo> c, Carrito carro, Scanner ScannerString, Scanner ScannerInt) {
 		/*
 		 * Mostrar el catalogo
 		 * Pedimos articulo por código, lo buscamos
@@ -109,9 +127,47 @@ public class Tienda {
 		 * 				Añadimos al carricoche
 		 * Repetir mientras
 		 */
+		int salircomprar = 0;
+		do {
+			mostrarCatalogo(c);
+
+			System.out.println("Introduzca el código del producto que quiere comprar: ");
+			String codigo = ScannerInt.nextLine();
+
+			Articulo a = buscarArticuloPorCodigo(c, codigo);
+			if (a != null) {
+				System.out.println("Introduzca la cantidad que quiera: ");
+				int cantidad = ScannerString.nextInt();
+				if (a.disponible(cantidad)) {
+					carro.addArticulo(a, cantidad);
+				} else {
+					System.out.println("Articulo no disponible, elije otro o revisa la cantidad.");
+				}
+			} else {
+				System.out.println("Articulo no disponible, elije otro o revisa la cantidad.");
+			}
+			carro.mostrarCarrito();
+			System.out.println("Pulsa 0: Si desea salir o confirmar.\nPulsa 1: Si desea seguir comprando.");
+		} while (salircomprar != 0);
 		
-		mostrarCatalogo(c);
-		System.out.println("");
+//		do {
+//			System.out.println("Introduzca el código del producto que quiere comprar: ");
+//			String codigo = ScannerInt.nextLine();
+//			for (int i = 0; i < c.size(); i++) {
+//				if (c.get(i).getCodigo().equals(codigo)) {
+//					salir = false;
+//				}
+//			}
+//			if (salir) {
+//				System.out.println("No ha introducido bien el código del producto.\nPorfavor");
+//			}
+//			if (!salir) {
+//				System.out.println("Introduzca la cantidad que quiera: ");
+//				int cantidad = ScannerString.nextInt();
+//				
+//			}
+//		} while (salir);
+//		System.out.println("salio xD");
 		
 	}
 	
