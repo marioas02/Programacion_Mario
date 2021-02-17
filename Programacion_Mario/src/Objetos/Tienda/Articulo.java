@@ -65,14 +65,19 @@ public class Articulo {
 
 	@Override
 	public String toString() {
-		return "Código: " + this.codigo + "\nNombre: " + this.nombre + "\nPrecio: " + this.precio + "€\nStock: "
-				+ this.stock + "\n";
+		StringBuilder sb = new StringBuilder();
+		sb.append("Codigo: ").append(this.codigo).append("\nNombre: ").append(this.nombre).append("\nPrecio: ")
+				.append(this.precio).append("€\nStock: ").append(this.stock).append("\n");
+		return sb.toString();
 	}
 
 	public boolean disponible(int cantidad) {
-		return cantidad < stock;
+		return cantidad <= stock;
 	}
 	
+	public void ajustarStock(int cantidad) {
+		this.stock += cantidad;
+	}
 	
 	@Override
 	public boolean equals(Object o) {

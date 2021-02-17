@@ -107,7 +107,7 @@ public class Tienda {
 		Articulo a = null;
 		boolean found = false;
 
-		while (i < talla || found) {
+		while (i < talla && !(found)) {
 			if (c.get(i).getCodigo().equals(codigo)) {
 				a = c.get(i);
 				found = true;
@@ -127,17 +127,17 @@ public class Tienda {
 		 * 				Añadimos al carricoche
 		 * Repetir mientras
 		 */
-		int salircomprar = 0;
+		int salircomprar = -1;
 		do {
 			mostrarCatalogo(c);
 
 			System.out.println("Introduzca el código del producto que quiere comprar: ");
-			String codigo = ScannerInt.nextLine();
+			String codigo = ScannerString.nextLine();
 
 			Articulo a = buscarArticuloPorCodigo(c, codigo);
 			if (a != null) {
 				System.out.println("Introduzca la cantidad que quiera: ");
-				int cantidad = ScannerString.nextInt();
+				int cantidad = ScannerInt.nextInt();
 				if (a.disponible(cantidad)) {
 					carro.addArticulo(a, cantidad);
 				} else {
@@ -146,33 +146,45 @@ public class Tienda {
 			} else {
 				System.out.println("Articulo no disponible, elije otro o revisa la cantidad.");
 			}
-			carro.mostrarCarrito();
+			System.out.println(carro.mostrarCarrito());
 			System.out.println("Pulsa 0: Si desea salir o confirmar.\nPulsa 1: Si desea seguir comprando.");
-		} while (salircomprar != 0);
-		
-//		do {
-//			System.out.println("Introduzca el código del producto que quiere comprar: ");
-//			String codigo = ScannerInt.nextLine();
-//			for (int i = 0; i < c.size(); i++) {
-//				if (c.get(i).getCodigo().equals(codigo)) {
-//					salir = false;
-//				}
-//			}
-//			if (salir) {
-//				System.out.println("No ha introducido bien el código del producto.\nPorfavor");
-//			}
-//			if (!salir) {
-//				System.out.println("Introduzca la cantidad que quiera: ");
-//				int cantidad = ScannerString.nextInt();
-//				
-//			}
-//		} while (salir);
-//		System.out.println("salio xD");
-		
+			salircomprar= ScannerInt.nextInt();
+		} while (salircomprar != 0);		
+	}
+	
+	private static int buscarPosicionArticuloPorCodigo(ArrayList<Articulo> c, String codigo) {
+		int talla = c.size();
+		int i = 0;
+		boolean found = false;
+
+		while (i < talla && !(found)) {
+			if (c.get(i).getCodigo().equals(codigo)) {
+				found = true;
+			} else {
+				i++;
+			}
+		}
+		if (found) {
+			return i;
+		} else {
+			return -1;
+		}
+
 	}
 	
 	@SuppressWarnings("unused")
-	private static void confirmarCarrito() {
+	private static void modificarStockCatalogo(ArrayList<Articulo> c, Carrito carro) {
+		int pos;
+		for (ArticuloCarrito ac : carro.pedido) {
+			pos = buscarPosicionArticuloPorCodigo(c, ac.elemento.getCodigo());
+			if (pos > -1) {
+				c.get(pos).ajustarStock(-1 * ac.cantidad);
+			}
+		}
+	}
+	
+	@SuppressWarnings("unused")
+	private static void confirmarCarrito(ArrayList<Articulo> c, Carrito carro, Scanner ScannerString, Scanner ScannerInt) {
 		/*
 		 * Mostramos carrito articulo + cantidades + el total
 		 * Preguntamos confirmacion
@@ -182,6 +194,11 @@ public class Tienda {
 		 * 			Cambiar el estado del Carrito
 		 * Mostramos un mensaje.
 		 */
+		System.out.println("xD");
+		System.out.println(carro.mostrarCarrito());
+		
+		
+		
 	}
 	
 	
