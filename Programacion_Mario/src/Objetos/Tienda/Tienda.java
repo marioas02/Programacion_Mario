@@ -48,6 +48,7 @@ public class Tienda {
 				break;
 				
 			case 3:
+				confirmarCarrito(catalogo, cesta, ScannerString, ScannerInt);
 				break;
 				
 			default:
@@ -148,8 +149,8 @@ public class Tienda {
 			}
 			System.out.println(carro.mostrarCarrito());
 			System.out.println("Pulsa 0: Si desea salir o confirmar.\nPulsa 1: Si desea seguir comprando.");
-			salircomprar= ScannerInt.nextInt();
-		} while (salircomprar != 0);		
+			salircomprar = ScannerInt.nextInt();
+		} while (salircomprar != 0);
 	}
 	
 	private static int buscarPosicionArticuloPorCodigo(ArrayList<Articulo> c, String codigo) {
@@ -172,7 +173,6 @@ public class Tienda {
 
 	}
 	
-	@SuppressWarnings("unused")
 	private static void modificarStockCatalogo(ArrayList<Articulo> c, Carrito carro) {
 		int pos;
 		for (ArticuloCarrito ac : carro.pedido) {
@@ -183,7 +183,6 @@ public class Tienda {
 		}
 	}
 	
-	@SuppressWarnings("unused")
 	private static void confirmarCarrito(ArrayList<Articulo> c, Carrito carro, Scanner ScannerString, Scanner ScannerInt) {
 		/*
 		 * Mostramos carrito articulo + cantidades + el total
@@ -194,9 +193,17 @@ public class Tienda {
 		 * 			Cambiar el estado del Carrito
 		 * Mostramos un mensaje.
 		 */
-		System.out.println("xD");
-		System.out.println(carro.mostrarCarrito());
+		int opcion;
 		
+		System.out.println(carro.mostrarCarrito());
+		System.out.println("Pulsa 1: Si desea confirmar el Carrito."
+				+"\nPulsa 2: No desea confirmar el Carrito.");
+		opcion = ScannerInt.nextInt();
+		if(opcion==1) {
+			carro.cambiarEstado();
+			modificarStockCatalogo(c, carro);
+		}
+		System.out.println(carro.mostrarCarrito());
 		
 		
 	}

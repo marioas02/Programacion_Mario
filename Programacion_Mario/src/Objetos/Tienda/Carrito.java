@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Carrito {
 	ArrayList<ArticuloCarrito> pedido;
 	float total;
-	boolean confirmado;
+	boolean estado;
 
 	public static boolean CONFIRMADO = true;
 	public static boolean PENDIENTE = false;
@@ -13,7 +13,7 @@ public class Carrito {
 	public Carrito() {
 		pedido = new ArrayList<ArticuloCarrito>();
 		total = 0;
-		confirmado = PENDIENTE;
+		estado = PENDIENTE;
 	}
 
 	private float calculaTotal() {
@@ -41,18 +41,26 @@ public class Carrito {
 	
 	public String mostrarCarrito() {
 		StringBuilder sb = new StringBuilder();
-		sb.append("**********CARRITO**********");
+		sb.append("**********CARRITO**********\n");
 		for (ArticuloCarrito ac : pedido) {
 			sb.append(ac);
 		}
-		sb.append("Total: ").append(this.total);
-		if (confirmado) {
+		sb.append("\nTotal: ").append(this.total);
+		if (estado) {
 			sb.append("\nEstado confirmado\n");
 		} else {
 			sb.append("\nEstado pendiente\n");
 		}
 		sb.append("**********CARRITO**********");
 		return sb.toString();
+	}
+	
+	public boolean cambiarEstado() {
+		if(estado) {
+			return estado = false;
+		}else {
+			return estado = true;
+		}
 	}
 
 }
