@@ -50,7 +50,7 @@ public class Semanal_6 {
 		// ORDENAMOS LOS CARACTERES EN ORDEN ALFABETICO
 		java.util.Arrays.sort(orden1);
 		java.util.Arrays.sort(orden2);
-
+		System.out.println(orden1);
 		// CONVERTIMOS LOS CARACTERES EN UNA CADENA DE CARACTERES
 		String frase3 = new String(orden1);
 		String frase4 = new String(orden2);
