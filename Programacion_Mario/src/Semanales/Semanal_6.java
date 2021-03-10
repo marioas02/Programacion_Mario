@@ -23,7 +23,7 @@ public class Semanal_6 {
 		String frase2 = null;
 		
 		do {
-			System.out.println("Escribe la primera frase:");
+			System.out.println("Escribee la primera frase:");
 			frase1 = Scanner.nextLine();
 
 			if (frase1.length() > 1000) {
